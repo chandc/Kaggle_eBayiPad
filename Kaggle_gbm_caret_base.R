@@ -42,7 +42,7 @@ outcomeName <- 'sold'
 predictorsNames <- names(DF)[names(DF) != outcomeName]
 
 # run model
-gbmControl <- trainControl(method='cv', number=3, returnResamp='none', 
+gbmControl <- trainControl(method='cv', number=10, returnResamp='none', 
                            summaryFunction = twoClassSummary, classProbs = TRUE)
 
 gbmModel <- train(Train[,predictorsNames], as.factor(Train[,outcomeName]), 
